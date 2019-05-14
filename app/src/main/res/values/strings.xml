@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyDictionary</string>
+    <!-- custom values-->
+    <string name="edit_text_string">search your word</string>
+    <string name="button_find">find</string>
+    <string name="todo">TODO</string>
+</resources>
