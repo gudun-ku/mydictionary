@@ -1,5 +1,6 @@
 package com.beloushkin.android.learn.mydictionary
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,8 @@ import java.net.URL
 import java.nio.charset.Charset
 
 class MainActivity : AppCompatActivity() {
+
+    public final val DEF_KEY = "myDefinition"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +52,20 @@ class MainActivity : AppCompatActivity() {
 
         override fun onPostExecute(result: Data?) {
             super.onPostExecute(result)
+
+            if (result == null) {
+                return
+            }
+
+            showDefinition(result.definition)
         }
+
+    }
+
+    fun showDefinition(definition: String?) {
+        val intent = Intent(this,Definition::class.java)
+        intent.putExtra(DEF_KEY, definition)
+        startActivity(intent)
 
     }
 
