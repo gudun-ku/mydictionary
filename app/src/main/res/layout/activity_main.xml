@@ -30,6 +30,7 @@
             android:layout_below="@+id/edtWord"
             android:background="@color/colorPrimary"
             android:text="@string/button_find"
+            android:onClick="findWord"
 
     />
 
